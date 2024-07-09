@@ -1,54 +1,41 @@
-# Like Me (Parte I)
+# Like Me (Parte II)
 
-## Descripción del Proyecto
+## Descripción
 
-"Like Me" es una nueva red social en desarrollo que se enfoca en los likes de los posts emitidos por los usuarios. Este proyecto implementa la lógica básica para la creación de posts y la interacción de likes.
+Like Me es una red social en desarrollo que busca permitir la interacción de likes y la eliminación de posts. Este proyecto es la continuación de la primera parte de Like Me, añadiendo nuevas funcionalidades a la API REST y mejorando la interacción con la base de datos PostgreSQL.
 
-## Objetivo
+## Características
 
-Crear un servidor que proporcione rutas GET y POST para consultar y guardar posts en una base de datos PostgreSQL utilizando el paquete pg.
+- API REST con nuevas rutas PUT y DELETE
+- Modificación y eliminación de registros en PostgreSQL
+- Manejo de errores en consultas SQL usando try-catch
 
-## Tecnologías Utilizadas
+## Requisitos previos
 
 - Node.js
-- Express
 - PostgreSQL
-- pg (paquete de Node.js para PostgreSQL)
-- cors
-
-## Configuración de la Base de Datos
-
-Ejecuta las siguientes instrucciones SQL para crear la base de datos y la tabla necesaria:
-
-```sql
-CREATE DATABASE likeme;
-CREATE TABLE posts (
-  id SERIAL, 
-  titulo VARCHAR(25), 
-  img VARCHAR(1000),
-  descripcion VARCHAR(255), 
-  likes INT
-);
-
-## Requerimientos
-
-Habilitar CORS en el servidor utilizando el paquete npm correspondiente.
-Usar el paquete pg para conectarse e interactuar con la base de datos PostgreSQL.
-Crear una ruta GET con Express para devolver los registros de la tabla posts.
-Crear una ruta POST con Express que reciba y almacene un nuevo registro en la tabla posts.
+- Conocimientos previos del desafío Like Me (Parte I)
 
 ## Instalación
 
-Clona este repositorio
-Instala las dependencias con npm install
-Configura las variables de entorno para la conexión a la base de datos
-Ejecuta el servidor con npm start
+1. Clona este repositorio
+2. Instala las dependencias con `npm install`
+3. Configura tu base de datos PostgreSQL
+4. Ejecuta el servidor con `npm start`
 
 ## Uso
-El servidor se ejecutará en http://localhost:3000. Utiliza las rutas definidas para interactuar con la API:
 
-GET /posts : Obtiene todos los posts
-POST /posts : Crea un nuevo post
+La API proporciona las siguientes rutas:
+
+- `PUT /posts/:id` - Modifica un post existente
+- `DELETE /posts/:id` - Elimina un post existente
+
+Consulta la documentación de la API para más detalles sobre cómo utilizar estas rutas.
+
+## Desarrollo
+
+Este proyecto fue desarrollado como parte del desafío de Desafío Latam. Se recomienda revisar el archivo de apoyo "Apoyo ejemplo Desafío - Like Me (parte II)" para ejemplos de cómo realizar operaciones CRUD utilizando fetch en React.
 
 ## Contribución
-Las contribuciones son bienvenidas. Por favor, abre un issue para discutir los cambios propuestos antes de realizar un pull request.
+
+Las contribuciones son bienvenidas. Por favor, abre un issue para discutir cambios mayores antes de crear un pull request.
